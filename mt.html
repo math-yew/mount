@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Clue Game</title>
+  <style>
+    .container {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    .row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .row input[type="text"] {
+      margin-left: 10px;
+    }
+    #message {
+      display: none;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <a href="https://www.myjournalcourier.com/news/article/mt-olive-woman-gets-20-year-drug-sentence-18171730.php https://hvmag.com/life-style/weddings/rushmore-estate/" target="_blank">Clue 1</a>
+      <input type="text" id="input1">
+    </div>
+    <div class="row">
+      <a href="https://hvmag.com/life-style/weddings/rushmore-estate/" target="_blank">Clue 2</a>
+      <input type="text" id="input2">
+    </div>
+    <div class="row">
+      <a href="https://www.theprogressnews.com/opinion/columnists/is-jesus-for-real/article_419e4c9c-d7c0-11ed-b343-efb70260e54c.html" target="_blank">Clue 3</a>
+      <input type="text" id="input3">
+    </div>
+    <div class="row">
+      <a href="https://www.montanarightnow.com/great-falls/great-falls-fire-monday-morning-under-investigation-for-suspicious-origins/article_adf8b430-1470-11ee-b645-8bc3e16e8e0a.html" target="_blank">Clue 4</a>
+      <input type="text" id="input4">
+    </div>
+    <div class="row">
+      <a href="https://www.delcotimes.com/2023/06/14/pixar-putt-penns-landing/" target="_blank">Clue 5</a>
+      <input type="text" id="input5">
+    </div>
+    <div class="row">
+      <a href="https://www.yelmonline.com/stories/mount-rainier-bird-included-in-lawsuit-against-us-fish-and-wildlife,321461" target="_blank">Clue 6</a>
+      <input type="text" id="input6">
+    </div>
+    <div class="row">
+      <a href="https://www.wqow.com/news/you-ask-we-answer/you-ask-we-answer-can-you-park-an-rv-on-the-side-of-a-road/article_63c9248a-1538-11ee-800f-9750275c883f.html" target="_blank">Clue 7</a>
+      <input type="text" id="input7">
+    </div>
+    <div class="row">
+      <a href="https://searchengineland.com/google-analytics-4-what-to-consider-428735" target="_blank">Clue 8</a>
+      <input type="text" id="input8">
+    </div>
+    <div class="row">
+      <a href="https://www.fool.com/investing/2023/06/27/better-telecom-stock-verizon-vs-att/" target="_blank">Clue 9</a>
+      <input type="text" id="input9">
+    </div>
+    <div id="message">
+	<h1>I Love You Jenn!</h1>
+	<p>School kids pass notes to each other sometimes.  This is how I do it. Programmer style.</p>  <p>You are my best friend!  I love doing life with you.  Thankyou for making the past 17 years far better than they would have been by myself!  Life so often is going to stink no matter what, but sucking it up with you makes is way better.  It can even turn it around and be fun instead.</p>  <p>I enjoy you for who you are.  I enjoy how your interests, like traveling for example, make my life even better.  I love your testimony and what you teach me as you learn it.  Like our honeymoon, I could still lay around and talk with you for hours, easily.  Unlike our honeymoon, we can do things while laying around that is way better than back then!  I look forward to another year with my other half! (that is you, not McKay, even if he tends to squeeze his way in our bubbles).  Rich or poor, you are who I want to be with.  Lets try rich sometime.  Thankyou for being what and who you are.</p>  <p>I love you Jenn!</p>
+	</div>
+  </div>
+
+  <script>
+    // Check if all input values match the required values
+    function checkInputValues() {
+      var input1 = document.getElementById("input1").value;
+      var input2 = document.getElementById("input2").value;
+      var input3 = document.getElementById("input3").value;
+      var input4 = document.getElementById("input4").value;
+      var input5 = document.getElementById("input5").value;
+      var input6 = document.getElementById("input6").value;
+      var input7 = document.getElementById("input7").value;
+      var input8 = document.getElementById("input8").value;
+      var input9 = document.getElementById("input9").value;
+
+	console.log(input1);
+
+      if (
+        input1.toLowerCase() === "mount" &&
+        input2.toLowerCase() === "rushmore" &&
+        input3.toLowerCase() === "is" &&
+        input4.toLowerCase() === "great" &&
+        input5.toLowerCase() === "to" &&
+        input6.toLowerCase() === "mount" &&
+        input7.toLowerCase() === "you" &&
+        input8.toLowerCase() === "is" &&
+        input9.toLowerCase() === "better"
+      ) {
+        document.getElementById("message").style.display = "block";
+      } else {
+		document.getElementById("message").style.display = "none";
+	  }
+    }
+
+    // Populate input values from local storage
+    function populateInputs() {
+      document.getElementById("input1").value = localStorage.getItem("input1");
+      document.getElementById("input2").value = localStorage.getItem("input2");
+      document.getElementById("input3").value = localStorage.getItem("input3");
+      document.getElementById("input4").value = localStorage.getItem("input4");
+      document.getElementById("input5").value = localStorage.getItem("input5");
+      document.getElementById("input6").value = localStorage.getItem("input6");
+      document.getElementById("input7").value = localStorage.getItem("input7");
+      document.getElementById("input8").value = localStorage.getItem("input8");
+      document.getElementById("input9").value = localStorage.getItem("input9");
+	  
+	  checkInputValues();
+    }
+
+
+    // Save input values to local storage
+    function saveInputs() {
+      localStorage.setItem("input1", document.getElementById("input1").value);
+      localStorage.setItem("input2", document.getElementById("input2").value);
+      localStorage.setItem("input3", document.getElementById("input3").value);
+      localStorage.setItem("input4", document.getElementById("input4").value);
+      localStorage.setItem("input5", document.getElementById("input5").value);
+      localStorage.setItem("input6", document.getElementById("input6").value);
+      localStorage.setItem("input7", document.getElementById("input7").value);
+      localStorage.setItem("input8", document.getElementById("input8").value);
+      localStorage.setItem("input9", document.getElementById("input9").value);
+    }
+
+    // Add event listeners
+    document.getElementById("input1").addEventListener("input", saveInputs);
+    document.getElementById("input2").addEventListener("input", saveInputs);
+    document.getElementById("input3").addEventListener("input", saveInputs);
+    document.getElementById("input4").addEventListener("input", saveInputs);
+    document.getElementById("input5").addEventListener("input", saveInputs);
+    document.getElementById("input6").addEventListener("input", saveInputs);
+    document.getElementById("input7").addEventListener("input", saveInputs);
+    document.getElementById("input8").addEventListener("input", saveInputs);
+    document.getElementById("input9").addEventListener("input", saveInputs);
+
+    document.getElementById("input1").addEventListener("input", checkInputValues);
+    document.getElementById("input2").addEventListener("input", checkInputValues);
+    document.getElementById("input3").addEventListener("input", checkInputValues);
+    document.getElementById("input4").addEventListener("input", checkInputValues);
+    document.getElementById("input5").addEventListener("input", checkInputValues);
+    document.getElementById("input6").addEventListener("input", checkInputValues);
+    document.getElementById("input7").addEventListener("input", checkInputValues);
+    document.getElementById("input8").addEventListener("input", checkInputValues);
+    document.getElementById("input9").addEventListener("input", checkInputValues);
+
+    // Populate inputs on page load
+    populateInputs();
+  </script>
+</body>
+</html>
